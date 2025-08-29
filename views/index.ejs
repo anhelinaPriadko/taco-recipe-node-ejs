@@ -14,11 +14,9 @@
       <button type="submit" value="fish" name="choice">🐟</button>
     </form>
     <div id="recipeContainer" class="hidden">
-      <!-- If no recipe yet, show: -->
-      <h2>Pick your favourite taco ingredient 👆</h2>
-      <!-- Else, show the recipe name e.g. <h2>Recipe name</h2>-->
-
-      <% if(locals.ingredientsList) {%>
+      <% if(locals.ingredientsList) {%> <% if(locals.ingredientsList.recipeName) { %>
+      <h2><%= ingredientsList.recipeName%></h2>
+      <% } %>
       <h3>Ingredients:</h3>
 
       <ul id="ingredientsList">
@@ -35,6 +33,8 @@
         <% } %> <% } %>
       </ul>
 
+      <% } else { %>
+      <h2>Pick your favourite taco ingredient 👆</h2>
       <% } %>
     </div>
   </body>

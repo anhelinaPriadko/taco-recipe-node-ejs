@@ -32,6 +32,7 @@ app.post("/recipe", (req, res) => {
 
   res.render("index.ejs", {ingredientsList :
     {
+      recipeName: responceRecipe.name,
       protein: responceRecipe.ingredients.protein.name 
         + " " + responceRecipe.ingredients.protein.preparation, 
       salsaName: responceRecipe.ingredients.salsa.name,
